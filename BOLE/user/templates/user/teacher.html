@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+    <title>{{ username }}</title>
+    <!-- <link rel='stylesheet' href='css/bootstrap.css'> -->
+    <!-- <link rel='stylesheet' href='css/header.css'> -->
+    <!-- <link rel='stylesheet' href='css/comm.css'> -->
+    <!-- <script src='js/jquery.min.js'></script>
+    <script src='js/popper.min.js'></script>
+    <script src='js/bootstrap.min.js'></script>
+    <script src="js/jquery-1.11.3.js"></script> -->
+    <style>
+       table{
+           margin-left: 25px;
+           margin-right: 25px;  
+           display: block;
+           width: 100%px;
+           height: 100px;
+           border: 1px solid #aaa;  
+           padding-top: 0px;
+           padding-left: 5px;
+           padding-right: 50px;
+           background: #eee;    
+       }
+       tbody{
+           padding: 10px;  
+           margin-bottom: 50px; 
+       }
+       tbody>tr>td{
+           text-align: center;
+           width: 150px;
+           margin-left:50px;
+       }
+       .d1{ width: 80px;
+            height: 40px;
+            border: 1px solid #aaa;
+            padding: 10px; 
+
+       }
+       .d1  {margin-left: 80px;
+            text-align: center;
+        }
+       .d2{
+           margin-left:165px;
+           padding-top: 29px;
+       }
+       button{width: 60px;}
+       .d_background{
+        background-color:#999
+       }
+       #myClass{
+           margin-top: 30px;
+           margin-left: 25px;
+           
+       }
+       #welcome{
+           margin-top: 0px;
+       }
+       #left_d{
+        float: left;
+        height: 800px;
+        width: 150px;
+      }
+      #left_d>div{
+        border: 2px solid #aaa;
+        height: 150px;
+        text-align: center;
+        padding-top: 55px
+      }
+      #left_d>div~div{
+        border-top: 0;
+      }
+      #table_d{
+        float: left;
+        width: 1000px;
+        margin-left: 20px  ;
+      }
+      #table_d>table{
+      width: 1000px; border-collapse:collapse;
+	  	text-align:center;
+    	}
+      td,th{border:1px solid #ccc}
+      .d_background{
+        background-color:#999
+       }
+    </style>    
+</head>
+<body>
+    <div id="header">
+        <table>
+            <thead>
+                <tr><td id="welcome">欢迎{{ username }}老师</td></tr>
+            </thead>
+            <tbody> 
+                <tr>
+                    <td><div class="d1 d_background"><h4>我的班级</h4></div></td>
+                    <td><div class="d1"><h4>学生作品</h4></div></td>
+                    <td><div class="d1"><h4>我的日志</h4></div></td>
+                    <td><div class="d1"><h4>个人详情</h4></div></td>
+                    <td><div class="d1"><h4>待续</h4></div></td>
+                    <td><div class="d2"><button>退出</button></div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="left_d">
+            <div class="open d_background"><h3>一班</h3></div>
+            <div><h3>二班</h3></div>  
+          </div>
+          <div id="table_d">
+              <table>
+                  <thead>
+                    <tr>
+                      <th>序号</th>
+                      <th>姓名</th>
+                      <th>学号</th>
+                      <th>科目1</th>
+                      <th>科目2</th>
+                      <th>科目3</th>
+                      <th>总成绩</th>
+                      <th>查看学生详情</th>
+                    </tr>
+                  </thead>
+                </table>
+          </div>
+    <script>
+        
+    </script>
+</body>
+</html>

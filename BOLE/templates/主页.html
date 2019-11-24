@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>首页</title>
+    <style>
+        #head{
+            background-image: url('../static/img/ss.jpg');
+            background-size: 100% 100%; 
+            width: 100%;
+            height: 55px;
+            border: solid 1px red;
+            position: relative;
+            text-align: center;
+        }
+        .box1{
+            width: 88px;
+            height: 35px;
+            border: solid 1px black;
+            text-align: center;
+            float: left;
+            margin-top: 10px;
+        }
+        #rt{
+            /* position: relative; */
+            float: right;
+            width: 200px;
+            background-color: rgb(150, 245, 240);
+        }
+    </style>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+</head>
+<body>
+    <div id="head">
+        <div class="box1"><a id="lg" href="/">首页</a></div>
+        <div id="rt" class="box1">
+
+        </div>  
+    </div>
+    <script>
+        $(function(){
+            check_login()
+        })
+        // 检查用户登录状态
+function check_login() {
+	// 向后台发异步请求
+	$.get('/user/check_login', function (data) {
+		var html = ''
+		// {loginState:0}
+		if (data.loginState == '0') {   
+			html = '<a href="/user/door">[登录]</a>,'
+			html += '<a href="/user/reg">[注册]</a>'
+		}
+		else {
+			html += "欢迎～" + data.username + ','
+			html += '<a href="/user/logout">[退出]</a>'
+		}
+		$("#rt").html(html)
+		console.log('ajax请求返回')
+	}, 'json')
+	console.log('ajax请求结束')
+}
+    </script>
+</body>
+</html>

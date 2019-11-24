@@ -1,0 +1,142 @@
+
+/*====================导航*********/
+.header{
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:999;
+	height:50px;
+	padding: 0 30px;
+	background: rgba(0, 0, 0);
+}
+/*左侧logo*/
+.header .left{
+	width: 12%;
+}
+.header .left a img{
+	height: 50px;
+	margin-top: 0px;
+}
+.header .left .img2{
+	display: none;
+}
+/*右侧*/
+.header .nav{
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	height: 100%;
+	line-height: 50px;
+	display: block;
+}
+.header .navbar_nav li{
+	float:left;
+	position: relative;
+	display: block;
+}
+.header .navbar_nav li:after{
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #fc9b00;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: all 0.5s ease 0s;
+}
+.header .navbar_nav li:hover:after{
+    width: 100%;
+}
+.header .navbar_nav li a{
+	text-decoration: none;
+	height: 100%;
+	padding: 0 25px;
+	display: block;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+	color: #fff;
+	font-size: 16px;
+}
+.header .navbar_nav li:hover a{
+	color: #fcd278;
+}
+.header .navbar_nav li.dropdown{
+	display: inherit;
+	position: relative;
+}
+.header .navbar_nav li.dropdown .jt{
+	width: 20px;
+	height: 20px;
+	background: url(i/top.png) no-repeat;
+	background-size: 100% 100%;
+	display: block;
+}
+.header .navbar_nav li.dropdown .dropdown_menu{
+	display: none;
+	position: absolute;
+	top:50px;
+	width: 100%;
+	background: #fff;
+	box-shadow: 0 15px 27px 0 rgba(167,165,165,0.38);
+	width: 120%;
+    left: -10%;
+}
+.header .navbar_nav li.dropdown .dropdown_menu a{
+	font-size: 14px;
+	color: #666;
+	padding: 0 10px;
+	line-height: 40px;
+	text-align: center;
+	background: #fff;
+	margin-bottom: 2px;
+}
+.header .navbar_nav li.dropdown:hover .dropdown_menu{
+	display: block;
+	background: #f3f3f3;
+	-webkit-transition: 0.5s;
+	-moz-transition: 0.5s;
+	-o-transition: 0.5s;
+	transition: 0.5s;
+}
+.header .navbar_nav li.dropdown:hover .dropdown_menu a{
+	color: #666;
+}
+.header .navbar_nav li.dropdown:hover .dropdown_menu a:hover{
+	color: #fff;
+	background: #fc9b00;
+}
+/*白色背景的头部*/
+.header.on{
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+}
+.header.on .left .img1{
+	display: none;
+}
+.header.on .left .img2{
+	display: block;
+}
+.header.on .navbar_nav li a{
+	color: #333;
+}
+.header.on .navbar_nav li:hover a{
+	color: #f0b557;
+}
+.banner{
+	width: 100%;
+}
+.banner img{
+	width: 100%;
+}
+@media screen and (max-width: 992px){
+	.header{
+		padding: 0 10px;
+	}
+	.header .nav{
+		display: none;
+	}
+}

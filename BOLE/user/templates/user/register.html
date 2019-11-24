@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <style>
+        #yz {
+            width: 50px;
+            height: 20px;
+            border: solid 1px #ccc;
+
+        }
+    </style>
+    <script src="/static/js/jquery-1.11.3.js"></script>
+    <script src="/static/js/common.js"></script>
+</head>
+
+<body>
+    <form action="/user/reg" method="POST">
+        {% csrf_token %}
+        <label for="phone">电话：</label>
+        <input id="phone" name="phone" type="text" placeholder="请输入手机号">
+        <span id="show_user"></span>
+        <br>
+        <lable for="email">邮箱：</lable>
+        <input id="email" type="email" name="email" placeholder="请输入邮箱">
+        <br>
+        <label for="">学生学号：</label>
+        <input id="student_id" name="student_id" type="text" placeholder="请输入您孩子的学号">
+        <span id="show_student"></span>
+        <br>
+        <label for="password">密码：</label>
+        <input id="password" name="password" type="password" placeholder="请输入密码">
+        <br>
+        <label for="repassword">确认密码：</label>
+        <input id="repassword" name="re_password" type="password" placeholder="请确认密码">
+        <span id="check_pwd"></span>
+        <br>
+        <lable>验证码:</lable>
+        <span name='rd' id="yz"></span>
+        <br>
+        <label for="code">确认验证码：</label>
+        <input id="code" placeholder="输入验证码" type="text" name="v_code">
+        <span id="show_code"></span>
+        <br>
+        <input id="submit" type="submit" value="注册">
+        <a href="/user/door">登录</a>
+    </form>
+    <script>
+        $(function () {
+            get_code()
+            // 验证用户
+            $('#phone').blur(function () {
+                check_name()
+            })
+            
+            $('#code').blur(function () {
+                check_code()
+            })
+            $('#student_id').blur(function () {
+                check_student()
+            })
+            $('#repassword').blur(function () {
+                check_pwd()
+            })
+            $('#yz').click(function(){
+                get_code()
+            })
+            $('#submit').click(function () {
+                check_name()
+                check_code()
+                check_pwd()
+                check_student()
+            })
+        })
+        // 验证用户
+        function check_name() {
+            var username = $('#phone').val()
+            console.log(username)
+            if(username.length<11){
+                $('#show_user').text('格式错误')
+                return false
+            }
+            if (username == '') {
+                $('#show_user').text('用户名不能为空')
+                $('#show_user').focus()
+
+                $('#submit').attr({ disabled: 'disabled' })
+                return false
+            }
+            $.get('/user/checkname', {
+                name: username
+            }, function (data) {
+                if (data == '1') {
+                    $('#show_user').text('ok')
+                    var submit = $('#submit').attr('disabled')
+                    // console.log(submit)
+                    if (submit == 'disabled') {
+                        return false
+                    }
+                    else {
+                        $('#submit').removeAttr('disabled')
+                    }
+
+                }
+                else {
+                    $('#show_user').text('该用户已存在')
+                    $('#submit').attr({ disabled: 'disabled' })
+                    return false
+                }
+            }, 'text')
+        }
+        // 获取验证码
+        function get_code() {
+            $.get('/user/get_code', function (data) {
+                $('#yz').html(data)
+            }, 'text')
+        }
+        // 校验验证码
+        function check_code() {
+            var net_code = $('#yz').text()
+            var user_code = $('#code').val()
+            if (net_code != user_code) {
+                $('#show_code').html('验证码错误')
+                $('#show_code').focus()
+                $('#submit').attr({ disabled: 'disabled' })
+                get_code()
+                return false
+            }
+            $('#show_code').html('ok')
+            
+            $('#submit').removeAttr('disabled')
+        }
+        // 校验两次密码一致性
+        function check_pwd() {
+            var pwd1 = $('#password').val()
+            var pwd2 = $('#repassword').val()
+            if (pwd1 == '' || pwd2 == '') {
+                $('#check_pwd').text('密码不能为空')
+                $('#password').focus()
+                $('#submit').attr({ disabled: 'disabled' })
+                return false
+            }
+            if (pwd1 != pwd2) {
+                $('#check_pwd').text('两次密码不一致')
+                $('#check_pwd').focus()
+                $('#submit').attr({ disabled: 'disabled' })
+                return false
+            }
+            $('#check_pwd').text('ok')
+            var submit = $('#submit').attr('disabled')
+            console.log(submit)
+            if (submit == 'disabled') {
+                return false
+            }
+            else {
+                $('#submit').removeAttr('disabled')
+            }
+        }
+        // 验证学号
+        function check_student() {
+            var student_id = $('#student_id').val()
+            if (student_id == '') {
+                $('#show_student').text('学号不能为空')
+                $('#submit').attr({ disabled: 'disabled' })
+                return false
+            }
+            $.get('/user/check_student', {
+                student_id: student_id
+            }, function (data) {
+                if (data == '1') {
+                    console.log(data)
+                    $('#show_student').text('ok')
+                    var submit = $('#submit').attr('disabled')
+                    console.log(submit)
+                    if (submit == 'disabled') {
+                        return false
+                    }
+                    else {
+                        $('#submit').removeAttr('disabled')
+                    }
+                }
+                else {
+                    $('#show_student').text('该学号不存在')
+                    $('#submit').attr({ disabled: 'disabled' })
+                    return false
+                }
+            }, 'text')
+        }
+    </script>
+</body>
+
+</html>
