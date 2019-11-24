@@ -69,6 +69,7 @@ class Student(models.Model):
     gender = models.BooleanField(verbose_name='性别', default=True)
     teacher = models.ForeignKey(Teacher)
     phone = models.CharField(verbose_name='电话', max_length=20, default='')
+    appraise = models.TextField(verbose_name='评价', default='')
     # 创建时间
     create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     # 修改时间

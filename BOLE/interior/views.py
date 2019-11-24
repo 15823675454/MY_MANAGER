@@ -197,8 +197,12 @@ def art_sort(res):
                     res['data'][i], res['data'][j] = res['data'][j], res['data'][i]
 
 
+# 增加学生
+@logging_check('POST')
 def add_student(request):
-    return None
+    if request.method == 'POST':
+        pass
+
 
 
 
