@@ -35,8 +35,12 @@ class Teacher(models.Model):
     age = models.CharField(verbose_name='年龄', max_length=5)
     # 邮箱
     email = models.EmailField(verbose_name='邮箱', max_length=60)
+    # 头像
+    avatar = models.ImageField(verbose_name='头像', upload_to='teacher', default='')
     # 性别
     gender = models.BooleanField(verbose_name='性别', default=True)
+    # 住址
+    address = models.CharField(verbose_name='住址', max_length=80, default='')
     # 电话
     phone = models.CharField(verbose_name='电话', max_length=20, unique=True)
     # 状态
@@ -65,11 +69,13 @@ class Student(models.Model):
     stu_id = models.CharField(verbose_name='学号', max_length=15, unique=True)
     name = models.CharField(verbose_name='姓名', max_length=15)
     stu_class = models.CharField(verbose_name='班级', max_length=20, default='')
-    age = models.CharField(verbose_name='年龄', max_length=5)
+    age = models.CharField(verbose_name='年龄', max_length=5, default='')
     gender = models.BooleanField(verbose_name='性别', default=True)
     teacher = models.ForeignKey(Teacher)
     phone = models.CharField(verbose_name='电话', max_length=20, default='')
+    address = models.CharField(verbose_name='住址', max_length=80, default='')
     appraise = models.TextField(verbose_name='评价', default='')
+    avatar = models.ImageField(verbose_name='头像', upload_to='student', default='')
     # 创建时间
     create_time = models.DateTimeField(verbose_name='创建时间', auto_now_add=True)
     # 修改时间
