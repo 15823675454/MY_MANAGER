@@ -42,7 +42,7 @@ def get_user_by_request(request):
 
 def teacher_info(request):
     # res = request.res
-    return render(request, 'interior/teacher.html')
+    return render(request, 'interior/index.html')
 
 
 # 返回该教师的所有学生
@@ -195,6 +195,12 @@ def art_sort(res):
             if len(res['data'][j]['art']) > 0:
                 if res['data'][j]['art'][0]['score'] > min:
                     res['data'][i], res['data'][j] = res['data'][j], res['data'][i]
+
+
+def add_student(request):
+    return None
+
+
 
 
 

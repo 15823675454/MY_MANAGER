@@ -19,14 +19,13 @@ function all_student() {
                 // 班级
                 $.each(result.class_list, function (index, element) {
                     // console.log(element)
-                    left_html += '<div class="open d_background">'
-                    left_html += '<h3><span onclick="get_one_class_info(this.id)" id="'
+                    left_html += '<a href="#" onclick="get_one_class_info(this.id)" id="'
                     left_html += element
                     left_html += '">'
                     left_html += element
-                    left_html += '</span></h3></div>'
+                    left_html += '</a>'
                 })
-                $('#my_class').html(left_html)
+                $('#class_manager').html(left_html)
                 html = ''
                 // 具体学生
                 $.each(result.data, function (index, element) {

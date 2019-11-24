@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="33a2e8c8-1f81-4647-9cd4-3f36eefc4eb0" name="Default Changelist" comment="" />
+    <list default="true" id="33a2e8c8-1f81-4647-9cd4-3f36eefc4eb0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interior/templates/interior/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interior/templates/interior/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/interior/templates/interior/teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interior/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/interior/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interior/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interior/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/myjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/head.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +24,71 @@
     <favorites_list name="BOLE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/interior/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/interior/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#304#1124#0" />
+                <element signature="e#1306#3233#0" />
+                <element signature="e#1912#2015#0" />
+                <element signature="e#2477#2567#0" />
+                <element signature="e#3323#4052#0" />
+                <element signature="e#4378#4970#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="155">
+              <caret line="285" selection-start-line="285" selection-end-line="285" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#279#1003#0" />
+                <element signature="e#1153#1841#0" />
+                <element signature="e#1958#2145#0" />
+                <element signature="e#2187#2392#0" />
+                <element signature="e#2438#2845#0" />
+                <element signature="e#2889#3296#0" />
+                <element signature="e#3339#7277#0" />
+                <element signature="e#3375#3660#0" />
+                <element signature="e#7333#8426#0" />
+                <element signature="e#8466#8597#0" />
+                <element signature="e#8630#9031#0" />
+                <element signature="e#9090#9279#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/user/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -32,11 +108,13 @@
       <replace>BOLE</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/BOLE/__init__.py" />
-        <option value="$PROJECT_DIR$/user/urls.py" />
         <option value="$PROJECT_DIR$/notes/models.py" />
         <option value="$PROJECT_DIR$/notes/urls.py" />
         <option value="$PROJECT_DIR$/score/urls.py" />
@@ -49,11 +127,12 @@
         <option value="$PROJECT_DIR$/tools/logging_check.py" />
         <option value="$PROJECT_DIR$/score/admin.py" />
         <option value="$PROJECT_DIR$/score/models.py" />
-        <option value="$PROJECT_DIR$/user/views.py" />
-        <option value="$PROJECT_DIR$/interior/urls.py" />
         <option value="$PROJECT_DIR$/user/models.py" />
         <option value="$PROJECT_DIR$/BOLE/settings.py" />
         <option value="$PROJECT_DIR$/tools/test.py" />
+        <option value="$PROJECT_DIR$/user/views.py" />
+        <option value="$PROJECT_DIR$/user/urls.py" />
+        <option value="$PROJECT_DIR$/interior/urls.py" />
         <option value="$PROJECT_DIR$/interior/views.py" />
       </list>
     </option>
@@ -64,6 +143,7 @@
     <option name="width" value="904" />
     <option name="height" value="555" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -84,7 +164,12 @@
             <path>
               <item name="BOLE" type="b2602c69:ProjectViewProjectNode" />
               <item name="BOLE" type="462c0819:PsiDirectoryNode" />
-              <item name="tools" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BOLE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BOLE" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -99,8 +184,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/interior/templates/interior" />
+      <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/user/templates/user" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/user" />
@@ -173,7 +258,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32952693" />
       <window_info anchor="bottom" id="DB Execution Console" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.3284553" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.3284553" />
@@ -182,6 +267,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="第二次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="第二次提交" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/js/common.js">
@@ -300,11 +389,6 @@
         <state relative-caret-position="-1653" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interior/templates/interior/teacher.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2767" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interior/models.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -344,46 +428,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="116" column="30" selection-start-line="116" selection-start-column="30" selection-end-line="116" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <element signature="e#279#1003#0" />
-            <element signature="e#1153#1841#0" />
-            <element signature="e#1958#2145#0" />
-            <element signature="e#2187#2392#0" />
-            <element signature="e#2889#3296#0" />
-            <element signature="e#3339#7255#0" />
-            <element signature="e#3375#3660#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/user/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/logging_check.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1457">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/interior/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -440,18 +490,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/interior/templates/interior/head.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/主页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1411" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interior/templates/interior/teacher.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4002" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="285" selection-start-line="285" selection-end-line="285" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#279#1003#0" />
+            <element signature="e#1153#1841#0" />
+            <element signature="e#1958#2145#0" />
+            <element signature="e#2187#2392#0" />
+            <element signature="e#2438#2845#0" />
+            <element signature="e#2889#3296#0" />
+            <element signature="e#3339#7277#0" />
+            <element signature="e#3375#3660#0" />
+            <element signature="e#7333#8426#0" />
+            <element signature="e#8466#8597#0" />
+            <element signature="e#8630#9031#0" />
+            <element signature="e#9090#9279#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/interior/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="188" column="8" selection-start-line="188" selection-start-column="8" selection-end-line="188" selection-end-column="8" />
+        <state relative-caret-position="213">
+          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <element signature="e#304#1124#0" />
-            <element signature="e#1158#1229#0" />
             <element signature="e#1306#3233#0" />
             <element signature="e#1912#2015#0" />
             <element signature="e#2477#2567#0" />
+            <element signature="e#3323#4052#0" />
             <element signature="e#4378#4970#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interior/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>

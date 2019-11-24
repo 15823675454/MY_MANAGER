@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^check_login$', views.check_login),
     url(r'^get_code$', views.send_code),
     url(r'^check_student$', views.check_student),
-    url(r'^login_check_name$', views.login_check_name)
+    url(r'^login_check_name$', views.login_check_name),
+
 ]

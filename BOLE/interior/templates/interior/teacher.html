@@ -1,148 +1,191 @@
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='X-UA-Compatible' content='ie=edge'>
-    <title>{{ username }}</title>
-    <!-- <link rel='stylesheet' href='css/bootstrap.css'> -->
-    <link rel='stylesheet' href='/static/css/hearder.css'>
-    <!-- <link rel='stylesheet' href='css/comm.css'> -->
-    <script src="/static/js/jquery.min.js"></script>
-    <script src="/static/js/jquery-1.11.3.js"></script>
-    <script src="/static/js/myjs.js"></script>
-    <style>
-       #head{
-           margin-left: 25px;
-           margin-right: 25px;  
-           display: block;
-           width: 100%px;
-           height: 150px;
-           border: 1px solid rgb(198, 245, 239);  
-           background:#cad9ff;   
-           text-align: center; 
-       }
-       tbody{
-           padding: 10px;  
-           margin-bottom: 50px; 
-       }
-       tbody>tr>td{
-           text-align: center;
-           width: 150px;
-           margin-left:50px;
-       }
-       .d1{ width: 80px;
-            height: 40px;
-            border: 1px solid rgb(255, 146, 22);
-            padding: 10px; 
-            line-height:50%;
 
-       }
-       .d1  {margin-left: 80px;
-            text-align: center;
-        }
-       .d2{
-           margin-left:165px;
-           padding-top: 29px;
-       }
-       button{width: 60px;}
-       .d_background{
-        background-color:rgb(139, 231, 243)
-       }
-       #myClass{
-           margin-top: 30px;
-           margin-left: 25px;
-           
-       }
-       #welcome{
-           margin-top: 0px;
-       }
-       #left_d{
-        float: left;
-        height: 800px;
-        width: 150px;
-        text-align: center;
-        margin-left: 25px;
-        /* border: 2px solid rgb(15, 146, 233); */
-      }
-      /* #left_d>div{
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <meta http-equiv='X-UA-Compatible' content='ie=edge'>
+  <title>{{ username }}</title>
+  <!-- <link rel='stylesheet' href='css/bootstrap.css'> -->
+  <link rel='stylesheet' href='/static/css/hearder.css'>
+  <!-- <link rel='stylesheet' href='css/comm.css'> -->
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-1.11.3.js"></script>
+  <script src="/static/js/myjs.js"></script>
+  <style>
+    #head {
+      margin-left: 25px;
+      margin-right: 25px;
+      display: block;
+      width: 100%px;
+      height: 150px;
+      border: 1px solid rgb(198, 245, 239);
+      background: #cad9ff;
+      text-align: center;
+    }
+
+    tbody {
+      padding: 10px;
+      margin-bottom: 50px;
+    }
+
+    tbody>tr>td {
+      text-align: center;
+      width: 150px;
+      margin-left: 50px;
+    }
+
+    .d1 {
+      width: 80px;
+      height: 40px;
+      border: 1px solid rgb(255, 146, 22);
+      padding: 10px;
+      line-height: 50%;
+
+    }
+
+    .d1 {
+      margin-left: 80px;
+      text-align: center;
+    }
+
+    .d2 {
+      margin-left: 165px;
+      padding-top: 29px;
+    }
+
+    button {
+      width: 60px;
+    }
+
+    .d_background {
+      background-color: rgb(139, 231, 243)
+    }
+
+    #myClass {
+      margin-top: 30px;
+      margin-left: 25px;
+
+    }
+
+    #welcome {
+      margin-top: 0px;
+    }
+
+    #left_d {
+      float: left;
+      height: 800px;
+      width: 150px;
+      text-align: center;
+      margin-left: 25px;
+      /* border: 2px solid rgb(15, 146, 233); */
+    }
+
+    /* #left_d>div{
         border: 2px solid #aaa;
         height: 0px;
         text-align: center;
         margin-left: 25px;
         padding-top: 25px
       } */
-      #left_dd>div~div{
-        border-top: 0;
-      }
-      
-      .d_background{
-        background-color:#cad9ff;
-       }
-
-      .name_color{
-        margin: 0 auto;
-        color: rgb(0, 255, 191);
-      }
-      #write {
-      /* max-width: 860px; */
-      margin: 0px auto;
-      /* padding: 30px 30px 100px; */
+    #left_dd>div~div {
+      border-top: 0;
     }
-    </style>    
-</head>
-<body>
-    <div id="header">
-        <table id="head">
-            <thead>
-                <tr><td id="welcome"></td></tr>
-            </thead>
-            <tbody > 
-                <tr>
-                    <td><div class="d1 d_background" onclick="all_student()"><h4>我的班级</h4></div></td>
-                    <td><div class="d1" onclick="stu_art()"><h4>学生作品</h4></div></td>
-                    <td><div class="d1"><h4>我的日志</h4></div></td>
-                    <td><div class="d1"><h4>个人详情</h4></div></td>
-                    <td><div class="d1"><h4>待续</h4></div></td>
-                    <td><div class="d2"><button id="logout" onclick="logout()">退出</button></div></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- 渲染界面 -->
-    <div id="left_d">
-            <div class="open d_background" id="all_student" onclick="all_student()">
-              <h3>全部</h3>
-            </div>
-            <div id="my_class"></div>         
-          </div>
-          <div id='write' class='is-node'>
-              <figure>
-                <table id="tb">
-                  <thead>
-                    <tr>
-                      <th><span>序号</span></th>
-                      <th><span>姓名</span></th>
-                      <th><span>学号</span></th>
-                      <th><span>班级</span></th>
-                      <th><span>美术成绩</span></th>
-                    </tr>
-                  </thead>
-                  <tbody id="content">   
-                  </tbody>
-                </table>
-            </figure>
-            <p>&nbsp;</p>
-    </div>
-    <script>
-      $(function(){
-        all_student()
-        var username = window.localStorage.getItem('manager_user')
-        console.log(username)
-        $('#welcome').html('欢迎'+ username+'老师')
-      })
-      
 
-</script>
+    .d_background {
+      background-color: #cad9ff;
+    }
+
+    .name_color {
+      margin: 0 auto;
+      color: rgb(0, 255, 191);
+    }
+
+    #write {
+      
+      margin: 0px auto;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <table id="head">
+      <thead>
+        <tr>
+          <td id="welcome"></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="d1 d_background" onclick="all_student()">
+              <h4>我的班级</h4>
+            </div>
+          </td>
+          <td>
+            <div class="d1" onclick="stu_art()">
+              <h4>学生作品</h4>
+            </div>
+          </td>
+          <td>
+            <div class="d1">
+              <h4>我的日志</h4>
+            </div>
+          </td>
+          <td>
+            <div class="d1">
+              <h4>个人详情</h4>
+            </div>
+          </td>
+          <td>
+            <div class="d1">
+              <h4>待续</h4>
+            </div>
+          </td>
+          <td>
+            <div class="d2"><button id="logout" onclick="logout()">退出</button></div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <!-- 渲染界面 -->
+  <div id="left_d">
+    <div class="open d_background" id="all_student" onclick="all_student()">
+      <h3>全部</h3>
+    </div>
+    <div id="my_class"></div>
+  </div>
+  <div id='write' class='is-node'>
+    <figure>
+      <table id="tb">
+        <thead>
+          <tr>
+            <th><span>序号</span></th>
+            <th><span>姓名</span></th>
+            <th><span>学号</span></th>
+            <th><span>班级</span></th>
+            <th><span>美术成绩</span></th>
+          </tr>
+        </thead>
+        <tbody id="content">
+        </tbody>
+      </table>
+    </figure>
+    <p>&nbsp;</p>
+  </div>
+  <script>
+    $(function () {
+      all_student()
+      var username = window.localStorage.getItem('manager_user')
+      console.log(username)
+      $('#welcome').html('欢迎' + username + '老师')
+    })
+
+
+  </script>
 </body>
+
 </html>

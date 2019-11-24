@@ -1,3 +1,5 @@
+<script src="/static/js/jquery-1.11.3.js"></script>
+<script src="/static/js/myjs.js"></script>
 <header class="header"> 
 	<div class="container clearfix"> 
 		<div class="fl left">
@@ -14,14 +16,14 @@
 						学生管理
 					</a>
 					<div class="dropdown_menu">
-						<a href="#">Custom Menu</a>
-						<a href="#">Custom Menu</a>
+						<a href="#">作品</a>
+						<a href="#">添加学生</a>
 						<a href="#">Custom Menu</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="javascript:void(0)">班级管理</a>
-					<div class="dropdown_menu">
+					<a href="javascript:void(0)"  onclick="all_student()">班级管理</a>
+					<div id="class_manager" class="dropdown_menu">
 						<a href="#">Custom Menu</a>
 						<a href="#">Custom Menu</a>
 						<a href="#">Custom Menu</a>
@@ -31,17 +33,25 @@
 					<a href="javascript:void(0)">学校管理</a>
 				</li>
 				<li id="admin" class="dropdown">
-					<a href="javascript:void(0)">
+					<a id="user_name" href="javascript:void(0)">
 						admin
 					</a>
 					<div class="dropdown_menu">
-						<a href="#">退出</a>
-						<a href="#">切换</a>
+						<a href="#" onclick="logout()">退出</a>
+						<a href="http://127.0.0.1:8000/user/door">切换</a>
 					</div>
 			</ul>
 		</div>
 	</div>
 </header>
+<script>
+	$(function(){
+		var user = window.localStorage.getItem('manager_user')
+		$('#user_name').text(user)
+		all_student()
+	})
+	
+</script>
 
 
 
