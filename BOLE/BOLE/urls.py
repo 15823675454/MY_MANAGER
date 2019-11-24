@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^interior/', include('interior.urls')),
     url(r'^123', views.index1),
     url(r'^head.html', views.head_1),
-    url(r'^img/head/(?P<img>.+)', views.img_1)
+    url(r'^img/head/(?P<img>.+)', views.img_1),
+    url(r'^add$', views.add_html)
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

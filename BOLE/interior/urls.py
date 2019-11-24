@@ -9,7 +9,8 @@ urlpatterns = [
     url(r'^one_class/(?P<w_class>.+)', views.one_class),
     url(r'^student/(?P<stu_id>\d+)', views.student_info),
     url(r'^student$', views.student_art),
-    url(r'^student/add', views.add_student)
+    url(r'^student/add$', views.add_student)
+
 ]
 
 

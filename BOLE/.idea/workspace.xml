@@ -2,17 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="33a2e8c8-1f81-4647-9cd4-3f36eefc4eb0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/interior/templates/interior/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interior/templates/interior/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/interior/templates/interior/teacher.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOLE/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOLE/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BOLE/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/BOLE/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interior/templates/interior/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/interior/templates/interior/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interior/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/interior/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interior/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/interior/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/myjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/myjs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/interior/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="290">
-              <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -37,53 +33,39 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/interior/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+            <state relative-caret-position="68">
+              <caret line="205" column="29" lean-forward="true" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#304#1124#0" />
-                <element signature="e#1306#3233#0" />
-                <element signature="e#1912#2015#0" />
-                <element signature="e#2477#2567#0" />
-                <element signature="e#3323#4052#0" />
-                <element signature="e#4378#4970#0" />
+                <element signature="e#1341#3231#0" />
+                <element signature="e#1625#3115#0" />
+                <element signature="e#1677#3059#0" />
+                <element signature="e#2475#2565#0" />
+                <element signature="e#3142#3231#0" />
+                <element signature="e#3321#4050#0" />
+                <element signature="e#4089#4302#0" />
+                <element signature="e#4376#4968#0" />
+                <element signature="e#5033#6315#0" />
+                <element signature="e#6350#6718#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user/views.py">
+        <entry file="file://$PROJECT_DIR$/user/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="285" selection-start-line="285" selection-end-line="285" />
+            <state relative-caret-position="97">
+              <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="16" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
-                <element signature="e#279#1003#0" />
-                <element signature="e#1153#1841#0" />
-                <element signature="e#1958#2145#0" />
-                <element signature="e#2187#2392#0" />
-                <element signature="e#2438#2845#0" />
-                <element signature="e#2889#3296#0" />
-                <element signature="e#3339#7277#0" />
-                <element signature="e#3375#3660#0" />
-                <element signature="e#7333#8426#0" />
-                <element signature="e#8466#8597#0" />
-                <element signature="e#8630#9031#0" />
-                <element signature="e#9090#9279#0" />
+                <element signature="e#96#646#0" />
+                <element signature="e#2133#3266#0" />
+                <element signature="e#3306#4222#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/user/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -122,26 +104,27 @@
         <option value="$PROJECT_DIR$/middleware/mymiddleware.py" />
         <option value="$PROJECT_DIR$/../../Ajax/项目wiki/wiki/wtoken/views.py" />
         <option value="$PROJECT_DIR$/user/admin.py" />
-        <option value="$PROJECT_DIR$/BOLE/urls.py" />
-        <option value="$PROJECT_DIR$/BOLE/views.py" />
         <option value="$PROJECT_DIR$/tools/logging_check.py" />
         <option value="$PROJECT_DIR$/score/admin.py" />
         <option value="$PROJECT_DIR$/score/models.py" />
-        <option value="$PROJECT_DIR$/user/models.py" />
         <option value="$PROJECT_DIR$/BOLE/settings.py" />
         <option value="$PROJECT_DIR$/tools/test.py" />
         <option value="$PROJECT_DIR$/user/views.py" />
         <option value="$PROJECT_DIR$/user/urls.py" />
+        <option value="$PROJECT_DIR$/user/models.py" />
+        <option value="$PROJECT_DIR$/../views.py" />
+        <option value="$PROJECT_DIR$/BOLE/views.py" />
+        <option value="$PROJECT_DIR$/BOLE/urls.py" />
         <option value="$PROJECT_DIR$/interior/urls.py" />
         <option value="$PROJECT_DIR$/interior/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="27" />
-    <option name="width" value="904" />
-    <option name="height" value="555" />
+    <option name="x" value="581" />
+    <option name="y" value="68" />
+    <option name="width" value="894" />
+    <option name="height" value="728" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -156,21 +139,6 @@
               <item name="BOLE" type="b2602c69:ProjectViewProjectNode" />
               <item name="BOLE" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BOLE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOLE" type="462c0819:PsiDirectoryNode" />
-              <item name="interior" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOLE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOLE" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BOLE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BOLE" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -179,7 +147,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Ajax/day03-note" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -242,12 +210,35 @@
       <option name="presentableId" value="Default" />
       <updated>1573125780477</updated>
     </task>
+    <task id="LOCAL-00001" summary="第二次提交">
+      <created>1574572006096</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574572006096</updated>
+    </task>
+    <task id="LOCAL-00002" summary="第三次提交,数据库添加评价">
+      <created>1574572225857</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1574572225857</updated>
+    </task>
+    <task id="LOCAL-00003" summary="第三次提交,数据库添加学生教师住址等字段">
+      <created>1574573723402</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1574573723403</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1293" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.13081166" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49756098" visible="true" weight="0.19070134" />
       <window_info id="Structure" order="1" sideWeight="0.500813" side_tool="true" weight="0.12923563" />
       <window_info id="Favorites" order="2" sideWeight="0.502439" side_tool="true" weight="0.12923563" />
       <window_info id="DB Browser" order="3" />
@@ -270,7 +261,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第二次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="第二次提交" />
+    <MESSAGE value="第三次提交,数据库添加评价" />
+    <MESSAGE value="第三次提交,数据库添加学生教师住址等字段" />
+    <option name="LAST_COMMIT_MESSAGE" value="第三次提交,数据库添加学生教师住址等字段" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/js/common.js">
@@ -438,41 +431,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="928">
-          <caret line="76" column="38" selection-start-line="76" selection-start-column="38" selection-end-line="76" selection-end-column="38" />
-          <folding>
-            <element signature="e#96#646#0" />
-            <element signature="e#692#1914#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/score/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1798">
-          <caret line="45" column="28" selection-start-line="45" selection-start-column="28" selection-end-line="45" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOLE/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/BOLE/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="e#640#672#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/BOLE/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
@@ -532,18 +490,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/interior/views.py">
+    <entry file="file://$PROJECT_DIR$/score/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="202" lean-forward="true" selection-start-line="202" selection-end-line="202" />
+        <state relative-caret-position="151">
+          <caret line="36" column="67" lean-forward="true" selection-start-line="36" selection-start-column="67" selection-end-line="36" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="218" column="12" lean-forward="true" selection-start-line="218" selection-start-column="12" selection-end-line="218" selection-end-column="12" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#304#1124#0" />
-            <element signature="e#1306#3233#0" />
-            <element signature="e#1912#2015#0" />
-            <element signature="e#2477#2567#0" />
-            <element signature="e#3323#4052#0" />
-            <element signature="e#4378#4970#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOLE/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/BOLE/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+          <folding>
+            <element signature="e#640#672#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -551,9 +527,42 @@
     <entry file="file://$PROJECT_DIR$/interior/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="290">
-          <caret line="11" column="39" lean-forward="true" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="26" column="4" lean-forward="true" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="16" />
+          <folding>
+            <element signature="e#96#646#0" />
+            <element signature="e#2133#3266#0" />
+            <element signature="e#3306#4222#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/interior/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="205" column="29" lean-forward="true" selection-start-line="205" selection-start-column="29" selection-end-line="205" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#304#1124#0" />
+            <element signature="e#1341#3231#0" />
+            <element signature="e#1625#3115#0" />
+            <element signature="e#1677#3059#0" />
+            <element signature="e#2475#2565#0" />
+            <element signature="e#3142#3231#0" />
+            <element signature="e#3321#4050#0" />
+            <element signature="e#4089#4302#0" />
+            <element signature="e#4376#4968#0" />
+            <element signature="e#5033#6315#0" />
+            <element signature="e#6350#6718#0" />
           </folding>
         </state>
       </provider>

@@ -167,21 +167,6 @@ def student_art(request):
             # 先对每个学生作品成绩排序 高--低
             selectionSort(item['art'])
             res['data'].append(item)
-        # 成绩排序
-        """{'data':
-                    [
-                        {'name':'xxx',
-                         'art':[{'score': 88, 'img': 'kldf.jpg'},{'score':77, 'img': 'xxx.jpg'}]
-                        }
-                    ]
-           }
-                    """
-        # 排序
-        # for i in range(len(res['data'])):
-        #     min = res['data'][i]['art'][0]['score']
-        #     for j in range(1, len(res['data'])):
-        #         if res['data'][j]['art'][0]['score'] > min:
-        #             res['data'][i],res['data'][j] = res['data'][j],res['data'][i]
         art_sort(res)
         return JsonResponse(res)
 
@@ -201,10 +186,42 @@ def art_sort(res):
 @logging_check('POST')
 def add_student(request):
     if request.method == 'POST':
-        pass
-
-
-
+        data = request.body
+        data = json.loads(data)
+        if not data:
+            res = {'code': 2010, 'error': 'add student not data'}
+            return JsonResponse(res)
+        name = data['name']
+        stu_id = data['stu_id']
+        stu_class = data['stu_class']
+        gender = data['gender']
+        if gender == '1':
+            gender = True
+        else:
+            gender = False
+        age = data['age']
+        appraise = data['appraise']
+        avatar = data['avatar']
+        print('======avatar========\n', avatar)
+        phone = data['phone']
+        address = data['address']
+        teacher = data['teacher']
+        try:
+            teacher = Teacher.objects.get(teacher_name=teacher)
+        except Exception as e:
+            res = {'code': 601, 'error': 'the teacher is not exists'}
+            return JsonResponse(res)
+        try:
+            student = Student.objects.create(stu_id=stu_id, name=name, stu_class=stu_class, age=age,
+                                             gender=gender, teacher=teacher, phone=phone, address=address,
+                                             appraise=appraise,
+                                             avatar=avatar,)
+        except Exception as e:
+            print(e)
+            res = {'code': 503, 'error': 'create student error'}
+            return JsonResponse(res)
+        res = {'code': 200}
+        return JsonResponse(res)
 
 
 

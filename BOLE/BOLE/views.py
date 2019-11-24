@@ -22,5 +22,10 @@ def img_1(request, img):
     return render(request, 'static/img/head'+img)
 
 
+def add_html(request):
+    return render(request, 'add_student.html')
+
+
+
 
 
