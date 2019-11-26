@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/static/css/reset.css" />
 <link rel="stylesheet" href="/static/css/swiper.min.css" />
 <link rel="stylesheet" href="/static/css/head.css" />
+<link href="/static/css/jq22.css" type="text/css" rel="stylesheet">
 <style>
 	.stu_img{
 		width: 190px;
@@ -82,7 +83,7 @@
 				<a href="#"><i class="fa fa-fw fa-home"></i> 主页</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-folder"></i>学生档案</a>
+				<a href="#" onclick="student_file()"><i class="fa fa-fw fa-folder" ></i>学生档案</a>
 			</li>
 			<li>
 				<a href="#"><i class="fa fa-fw fa-file-o"></i>学生成绩</a>
@@ -92,7 +93,7 @@
 			  <ul class="dropdown-menu" role="menu">
 					<li class="dropdown-header"></li>
 					<li><a href="#" onclick="all_student()">学生名单</a></li>
-					<li><a href="#" onclick="stu_art()">学生作品</a></li>
+					<li><a href="http://127.0.0.1:8000/art" onclick="stu_art()">学生作品</a></li>
 					<li><a href="#" onclick="add_student_html()">添加学生</a></li>
 					<li><a href="#">打印</a></li>
 			  </ul>

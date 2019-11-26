@@ -26,6 +26,9 @@ def add_html(request):
     return render(request, 'add_student.html')
 
 
+def student_art(request):
+    return render(request, 'student_art.html')
 
 
-
+def notfound(request):
+    return HttpResponse('404 Not Found')

@@ -51,47 +51,75 @@ def return_all_stu_info(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
         data = json.loads(data)
-        # print('学生---', data)
         if not data:
             res = {'code': 2010, 'error': 'not data'}
             return JsonResponse(res)
-        user = get_user_by_request(request)
-        if user:
-            # 教师
-            if user[1] == '1':
-                all_stu = Student.objects.filter(teacher=user[0])
-                # print(all_stu)
-                res = {'code': 200, 'data': [], 'class_list': []}
-
-                for i in all_stu:
-                    try:
-                        stu_score = ArtWork.objects.filter(student=i.stu_id)[0]
-                        score = stu_score.score
-                    except Exception as e:
-                        score = 0
-                    if i.stu_class not in res['class_list']:
-                        res['class_list'].append(i.stu_class)
-                    item={}
-                    # print(i)
-                    item['stu_id'] = i.stu_id
-                    item['name'] = i.name
-                    item['stu_class'] = i.stu_class
-                    item['score'] = score
-                    # item['score'] = {'语文': stu_score.chinese, '数学': stu_score.math, '英语': stu_score.english,
-                    #                  '物理': stu_score.physical, '化学': stu_score.chemistry, '生物': stu_score.biological,
-                    #                  '政治': stu_score.political, '历史': stu_score.history, '地理': stu_score.geography,
-                    #                  '体育': stu_score.sports, '美术': stu_score.art}
-                    res['data'].append(item)
-                # 待写--排序res['data']根据成绩排序
-                selectionSort(res['data'])
-
-                return JsonResponse(res)
-            # 家长
-            else:
-                pass
-        else:
-            res = {'code': 2011, 'error': 'the user not exists'}
+        teacher = data['username']
+        t_teacher = get_user_by_request(request)[0]
+        # print('=========用户===========\n', teacher, t_teacher)
+        if not t_teacher:
+            res = {'code': 756, 'error': '用户未通过校验'}
             return JsonResponse(res)
+        if str(teacher).strip() == str(t_teacher).strip():
+            all_student = Student.objects.filter(teacher=t_teacher)
+            res = {'code': 200, 'data': [], 'class_list': []}
+            for i in all_student:
+                item = {}
+                item['name'] = i.name
+                item['stu_id'] = i.stu_id
+                item['stu_class'] = i.stu_class
+                if i.stu_class not in res['class_list']:
+                    res['class_list'].append(i.stu_class)
+                item['age'] = i.age
+                if i.gender:
+                    gender = '男'
+                else:
+                    gender = '女'
+                item['gender'] = gender
+                item['phone'] = i.phone
+                item['stu_parent'] = i.stu_parent
+                res['data'].append(item)
+            return JsonResponse(res)
+        else:
+            res = {'code': 777, 'error': '非法用户'}
+            return JsonResponse(res)
+        # user = get_user_by_request(request)
+        # if user:
+        #     # 教师
+        #     if user[1] == '1':
+        #         all_stu = Student.objects.filter(teacher=user[0])
+        #         # print(all_stu)
+        #         res = {'code': 200, 'data': [], 'class_list': []}
+        #
+        #         for i in all_stu:
+        #             try:
+        #                 stu_score = ArtWork.objects.filter(student=i.stu_id)[0]
+        #                 score = stu_score.score
+        #             except Exception as e:
+        #                 score = 0
+        #             if i.stu_class not in res['class_list']:
+        #                 res['class_list'].append(i.stu_class)
+        #             item={}
+        #             # print(i)
+        #             item['stu_id'] = i.stu_id
+        #             item['name'] = i.name
+        #             item['stu_class'] = i.stu_class
+        #             item['score'] = score
+        #             # item['score'] = {'语文': stu_score.chinese, '数学': stu_score.math, '英语': stu_score.english,
+        #             #                  '物理': stu_score.physical, '化学': stu_score.chemistry, '生物': stu_score.biological,
+        #             #                  '政治': stu_score.political, '历史': stu_score.history, '地理': stu_score.geography,
+        #             #                  '体育': stu_score.sports, '美术': stu_score.art}
+        #             res['data'].append(item)
+        #         # 待写--排序res['data']根据成绩排序
+        #         selectionSort(res['data'])
+        #
+        #         return JsonResponse(res)
+        #     # 家长
+        #     else:
+        #         pass
+        # else:
+        #     res = {'code': 2011, 'error': 'the user not exists'}
+        #     return JsonResponse(res)
 
 
 # 单独一个班级的所有学生 w_class-->班级
@@ -156,8 +184,9 @@ def student_art(request):
         res = {'code': 200, 'data': []}
         for stu in all_student:
             item = {}
-            item['name'] = stu.stu_id
+            item['name'] = stu.name
             item['art'] = []
+            item['stu_class'] = stu.stu_class
             art = ArtWork.objects.filter(student=stu.stu_id)
             for i in art:
                 img_item = {}
@@ -222,6 +251,16 @@ def add_student(request):
             return JsonResponse(res)
         res = {'code': 200}
         return JsonResponse(res)
+
+
+def class_index(request):
+
+    return render(request, 'interior/student_class.html')
+
+
+
+
+
 
 
 

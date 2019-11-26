@@ -117,26 +117,27 @@ function stu_art(){
         success: function (result) {
             if (result.code == 200) {
                 // 遍历学生列表,获取到单个学生
-                html = ''
-                $.each(result.data, function(index, element){
-                    var stu_name = element.name
-                    // console.log(stu_name)
-                    // 遍历单个学生所有作品
-                    $.each(element.art, function(index_i, element_i){
-                        html += '<div class="c_img">'
-                        html += '<img class="stu_img" src="http://127.0.0.1:8000/media/'
-                        html += element_i.img
-                        html += '">'
-                        html += '<span class="t">'
-                        html += stu_name  
-                        html += '&nbsp;|&nbsp;'
-                        html += element_i.score
-                        html += '</span>'
-                        html += '</div>'
-                        // console.log(html)
-                    })
-                })
-                $('#write').html(html)
+                // html = ''
+                // $.each(result.data, function(index, element){
+                //     var stu_name = element.name
+                //     // console.log(stu_name)
+                //     // 遍历单个学生所有作品
+                //     $.each(element.art, function(index_i, element_i){
+                //         html += '<div class="c_img">'
+                //         html += '<img class="stu_img" src="http://127.0.0.1:8000/media/'
+                //         html += element_i.img
+                //         html += '">'
+                //         html += '<span class="t">'
+                //         html += stu_name  
+                //         html += '&nbsp;|&nbsp;'
+                //         html += element_i.score
+                //         html += '</span>'
+                //         html += '</div>'
+                //         // console.log(html)
+                //     })
+                // })
+                // $('#write').html(html)
+                window.localStorage.setItem('all_stu_art', JSON.stringify(result.data))
             }
 
         }
@@ -182,6 +183,10 @@ function add_student(){
 
         }
     })
+}
+// 加载所有班级界面
+function student_file(){
+    $('#write').load('/interior/student/class#tabs')
 }
 
 
