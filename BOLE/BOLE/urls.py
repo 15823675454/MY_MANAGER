@@ -23,12 +23,17 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^user/', include('user.urls')),
     url(r'^interior/', include('interior.urls')),
+    url(r'^login/', include('login.urls')),
     url(r'^123', views.index1),
     url(r'^head.html', views.head_1),
     url(r'^img/head/(?P<img>.+)', views.img_1),
     url(r'^add$', views.add_html),
     url(r'^art$', views.student_art),
-    url(r'undefined', views.notfound)
+    url(r'^calendar', views.calendar_index),
+    url(r'undefined', views.notfound),
+    url(r'delete/(?P<stu_id>\w+)', views.delete_student),
+    url(r'update/(?P<stu_id>\w+)', views.update_student),
+    url(r'^setting', views.teac_set_index)
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

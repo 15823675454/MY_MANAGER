@@ -181,7 +181,7 @@
             // dataType
             dataType: "json",
             // url
-            url: "http://127.0.0.1:8000/user/login/jfb",
+            url: "http://176.221.13.63:8000/user/login/jfb",
             data: JSON.stringify(post_data),
             // result 为请求的返回结果对象
             success: function (result) {
@@ -191,7 +191,7 @@
                     alert('登陆成功')
                     refer_url = document.referrer
                     //如果是项目内部的请求，回跳到上一步
-                    // if (refer_url.search('127.0.0.1') != -1) {
+                    // if (refer_url.search('176.221.13.63') != -1) {
 
                     //     window.location = refer_url;
 

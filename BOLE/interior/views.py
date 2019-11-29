@@ -1,3 +1,5 @@
+import codecs
+import csv
 import json
 
 import jwt
@@ -25,14 +27,14 @@ def get_user_by_request(request):
     data = res['username']
     identity = data['identity']
     if identity == 'teacher':
-        teacher = Teacher.objects.filter(teacher_name=data['username'], phone=data['phone'])[0]
+        teacher = Teacher.objects.filter(teacher_name=data['username'], phone=data['phone'], isActive=True)[0]
         if teacher and teacher.school.school_id == data['school']:
             # 通过
             return [teacher, '1']
         else:
             return None
     elif identity == 'parent':
-        parent = Parent.objects.filter(username=data['username'], phone=data['phone'])[0]
+        parent = Parent.objects.filter(username=data['username'], phone=data['phone'], isActive=True)[0]
         if parent:
             # 通过
             return [parent, '0']
@@ -61,7 +63,7 @@ def return_all_stu_info(request):
             res = {'code': 756, 'error': '用户未通过校验'}
             return JsonResponse(res)
         if str(teacher).strip() == str(t_teacher).strip():
-            all_student = Student.objects.filter(teacher=t_teacher)
+            all_student = Student.objects.filter(teacher=t_teacher, isActive=True)
             res = {'code': 200, 'data': [], 'class_list': []}
             for i in all_student:
                 item = {}
@@ -127,12 +129,12 @@ def return_all_stu_info(request):
 def one_class(request, w_class):
     if request.method == 'POST':
         print('单个班级函数被调用', w_class)
-        all_stu = Student.objects.filter(stu_class=w_class)
+        all_stu = Student.objects.filter(stu_class=w_class, isActive=True)
         res = {'code': 200, 'data': []}
         for i in all_stu:
             item = {}
             try:
-                stu_score = ArtWork.objects.filter(student=i.stu_id)[0]
+                stu_score = ArtWork.objects.filter(student=i.stu_id, isActive=True)[0]
                 score = stu_score.score
             except Exception as e:
                 score = 0
@@ -165,7 +167,7 @@ def student_info(request, stu_id):
     if request.method == 'POST':
         print('学生个人信息')
         try:
-            student = Student.objects.get(stu_id=stu_id)
+            student = Student.objects.get(stu_id=stu_id, isActive=True)
         except Exception as e:
             res = {'code': 404, 'error': 'not found student'}
             return JsonResponse(res)
@@ -236,7 +238,7 @@ def add_student(request):
         address = data['address']
         teacher = data['teacher']
         try:
-            teacher = Teacher.objects.get(teacher_name=teacher)
+            teacher = Teacher.objects.get(teacher_name=teacher, isActive=True)
         except Exception as e:
             res = {'code': 601, 'error': 'the teacher is not exists'}
             return JsonResponse(res)
@@ -258,13 +260,45 @@ def class_index(request):
     return render(request, 'interior/student_class.html')
 
 
+# 教师首页
+def index(request):
+    return render(request, 'interior/teacher_index.html')
 
 
+# 教师基本信息设置
+@logging_check('POST')
+def setting_index(request):
+    if request.method == 'POST':
+        data = request.body
+        data = json.loads(data)
+        if not data:
+            res = {'code': 2010, 'error': 'add student not data'}
+            return JsonResponse(res)
 
 
+# 打印教师所有的学生
+@logging_check('POST')
+def print_student(request):
+    if request.method == 'POST':
+        response = HttpResponse(content_type='text/csv;charset=UTF-8')
+        response.write(codecs.BOM_UTF8)
+        # 响应头中添加特殊的 附件头
+        response['Content_Disposition'] = 'attachment;filename=student.csv'
+        teacher = request.user
+        student_list = Student.objects.filter(teacher=teacher)
+        writer = csv.writer(response)
+        writer.writerow(['序号', '姓名', '学号', '班级', '性别', '电话', '家长电话', '住址', '入学时间'])
+        i = 1
+        for stu in student_list:
+            if stu.gender:
+                gender = '男'
+            else:
+                gender = '女'
+            writer.writerow([i, stu.name, stu.stu_id, stu.stu_class, gender, stu.phone, stu.stu_parent, stu.address,
+                             stu.create_time.strftime("%Y-%m-%d")])
+            i += 1
 
-
-
+    return response
 
 
 

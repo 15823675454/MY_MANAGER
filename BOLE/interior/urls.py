@@ -10,7 +10,10 @@ urlpatterns = [
     url(r'^student/(?P<stu_id>\d+)', views.student_info),
     url(r'^student$', views.student_art),
     url(r'^student/add$', views.add_student),
-    url(r'^student/class$', views.class_index)
+    url(r'^student/class$', views.class_index),
+    url(r'^index', views.index),
+    url(r'^teacher', views.setting_index),
+    url(r'^print_student$', views.print_student)
 
 ]
 

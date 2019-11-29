@@ -12,7 +12,7 @@ class MyMiddleware(MiddlewareMixin):
     def process_request(self, request):
         # 得到远程客户端ip地址
         ip_address = request.META['REMOTE_ADDR']
-        if not re.match(r'^/user/login/(?P<school>\w+)$', request.path_info):
+        if not re.match(r'/', request.path_info):
             return
         if self.r.exists(ip_address):
             times = int(self.r.get(ip_address).decode())+1

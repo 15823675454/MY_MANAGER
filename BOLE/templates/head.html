@@ -16,13 +16,13 @@
 						学生管理
 					</a>
 					<div class="dropdown_menu">
-						<a href="#">作品</a>
+						<a href="#" onclick="stu_art()">作品</a>
 						<a href="#">添加学生</a>
 						<a href="#">Custom Menu</a>
 					</div>
 				</li>
 				<li class="dropdown">
-					<a href="http://127.0.0.1:8000/interior/student/class" >班级管理</a>
+					<a href="http://176.221.13.63:8000/interior/student/class" >班级管理</a>
 					<div id="class_manager" class="dropdown_menu">
 						<a href="#">Custom Menu</a>
 						<a href="#">Custom Menu</a>
@@ -38,8 +38,9 @@
 					</a>
 					<div class="dropdown_menu">
 						<a href="#" onclick="logout()">退出</a>
-						<a href="http://127.0.0.1:8000/user/door">切换</a>
+						<a href="http://176.221.13.63:8000/user/door">切换</a>
 					</div>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -47,9 +48,15 @@
 <script>
 	$(function(){
 		var user = window.localStorage.getItem('manager_user')
+		// console.log(user)
+		if(user==null){
+			// console.log(8888888888888888)
+			$('#admin').html(`<a href="http://176.221.13.63:8000">请登录</a>`)
+		}
 		$('#user_name').text(user)
-		all_student()
+		// all_student()
 	})
+
 	
 </script>
 

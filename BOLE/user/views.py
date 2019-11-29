@@ -90,13 +90,12 @@ def check_student(request):
 def teacher_success(teacher):
     now_time = datetime.datetime.now()
     # 教师登录时间
-    teacher[0].login_time = now_time
-    teacher[0].save()
+    teacher.login_time = now_time
+    teacher.save()
 
-    item = {'identity': 'teacher', 'username': teacher[0].teacher_name, 'phone': teacher[0].phone, 'school': teacher[
-        0].school.school_id}
+    item = {'identity': 'teacher', 'username': teacher.teacher_name, 'phone': teacher.phone, 'school': teacher.school.school_id}
     token = maketoken(item, 60 * 60 * 24, now_time).decode()
-    res = {'code': 200, 'token': token, 'username': teacher[0].teacher_name}
+    res = {'code': 200, 'token': token, 'username': teacher.teacher_name}
     return res
 
 
@@ -126,6 +125,7 @@ def log_view(request, school):
             raise Http404
 
     if request.method == 'POST':
+        print('ssssssssss\n', school)
         data = request.body.decode('utf-8')
         data = json.loads(data)
         if not data:
@@ -134,23 +134,28 @@ def log_view(request, school):
         # print('登录Post被调用')
         # 江北校区
         if school == 'jbxq':
+            # print('6666666666666666666\n', data)
             school = School.objects.get(school_id=100001, isActive=True)
             identity = data['identity']
             phone = data['username']
-            pwd = data['userpwd']
+            pwd = data['password']
             # print('====登录=========')
             # print(identity, phone, pwd)
             # 教师
             if identity == '1':
-                teacher = Teacher.objects.filter(phone=phone, password=pwd, isActive=True, school=school)
-
+                try:
+                    teacher = Teacher.objects.get(phone=phone, password=pwd, isActive=True, school=school)
+                    # print('tttttttttt\n', teacher)
+                except Exception as e:
+                    return JsonResponse({'code':555, 'error': '该教师不存在!'})
                 if teacher:
                     res = teacher_success(teacher)
                     # print('====教师登录成功')
                     # print(teacher[0].teacher_name)
                     return JsonResponse(res)
                 else:
-                    return HttpResponse('登录失败！')
+                    res = {'code': 405, 'error': '登录失败!'}
+                    return JsonResponse(res)
             # 家长
             else:
                 pwd = encryption(pwd)
@@ -159,26 +164,31 @@ def log_view(request, school):
                     res = parent_success(parent)
                     return JsonResponse(res)
                 else:
-                    return HttpResponse('登录失败')
+                    res = {'code': 405, 'error': '登录失败!'}
+                    return JsonResponse(res)
         # 渝北校区
         elif school == 'ybxq':
             school = School.objects.get(school_id=100002, isActive=True)
             identity = data['identity']
             phone = data['username']
-            pwd = data['userpwd']
+            pwd = data['password']
             # print('====登录=========')
             # print(identity, phone, pwd)
             # 教师
             if identity == '1':
-                teacher = Teacher.objects.filter(phone=phone, password=pwd, isActive=True, school=school)
-
+                try:
+                    teacher = Teacher.objects.get(phone=phone, password=pwd, isActive=True, school=school)
+                    print('tttttttttt\n', teacher)
+                except Exception as e:
+                    return JsonResponse({'code': 555, 'error': '该教师不存在!'})
                 if teacher:
                     res = teacher_success(teacher)
                     # print('====教师登录成功')
                     # print(teacher[0].teacher_name)
                     return JsonResponse(res)
                 else:
-                    return HttpResponse('登录失败！')
+                    res = {'code': 405, 'error': '登录失败!'}
+                    return JsonResponse(res)
             # 家长
             else:
                 pwd = encryption(pwd)
@@ -187,18 +197,23 @@ def log_view(request, school):
                     res = parent_success(parent)
                     return JsonResponse(res)
                 else:
-                    return HttpResponse('登录失败')
+                    res = {'code': 405, 'error': '登录失败!'}
+                    return JsonResponse(res)
         # 解放碑校区
         elif school == 'jfb':
             school = School.objects.get(school_id=100003, isActive=True)
             identity = data['identity']
             phone = data['username']
-            pwd = data['userpwd']
+            pwd = data['password']
             print('====登录=========')
             print(identity, phone, pwd)
             # 教师
             if identity == '1':
-                teacher = Teacher.objects.filter(phone=phone, password=pwd, isActive=True, school=school)
+                try:
+                    teacher = Teacher.objects.get(phone=phone, password=pwd, isActive=True, school=school)
+                    print('tttttttttt\n', teacher)
+                except Exception as e:
+                    return JsonResponse({'code': 555, 'error': '该教师不存在!'})
 
                 if teacher:
                     res = teacher_success(teacher)
@@ -206,7 +221,8 @@ def log_view(request, school):
                     # print(teacher[0].teacher_name)
                     return JsonResponse(res)
                 else:
-                    return HttpResponse('登录失败！')
+                    res = {'code': 405, 'error': '登录失败!'}
+                    return JsonResponse(res)
             # 家长
             else:
                 pwd = encryption(pwd)
@@ -215,7 +231,8 @@ def log_view(request, school):
                     res = parent_success(parent)
                     return JsonResponse(res)
                 else:
-                    return HttpResponse('登录失败')
+                    res = {'code': 405, 'error': '登录失败!'}
+                    return JsonResponse(res)
         else:
             return HttpResponse('Not Found')
 

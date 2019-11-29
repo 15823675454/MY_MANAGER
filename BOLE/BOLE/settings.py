@@ -25,7 +25,7 @@ SECRET_KEY = '8tv87u@j(2^7m2dq_&o7gxq_(7s(p$9amx_j#ysymkispt-vve'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['176.221.13.63', '127.0.0.1', '*']
 
 
 # Application definition
@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'user',
     'notes',
     'score',
-    'interior'
+    'interior',
+    'login'
 ]
 
 MIDDLEWARE = [
@@ -134,3 +135,29 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
+
+
+# CORS全部
+CORS_ORIGIN_ALLOW_ALL = True
+# 允许使用的方法
+CORS_ALLOW_METHODS = (
+    'DELETE',
+    'GET',
+    'OPTIONS',
+    'PATCH',
+    'POST',
+    'PUT',
+)
+# 允许使用的请求头
+CORS_ALLOW_HEADERS = (
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
+
+)
+APPEND_SLASH = False

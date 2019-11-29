@@ -61,16 +61,15 @@
 		.c_student{
 			color: #003aff;
 		}
+		
 </style>
 </head>
-
 <body>
 <header id="header">
 </header>
 <!-- 左侧侧边栏 -->
 <div id="wrapper" class="toggled">
 	<div class="overlay"></div>
-	
 	<!-- 侧边栏 -->
 	<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
 		<ul class="nav sidebar-nav">
@@ -80,32 +79,32 @@
 				</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-home"></i> 主页</a>
+				<a href="#" onclick="load_index()"><i class="fa fa-fw fa-home"></i> 主页</a>
 			</li>
 			<li>
 				<a href="#" onclick="student_file()"><i class="fa fa-fw fa-folder" ></i>学生档案</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-file-o"></i>学生成绩</a>
+				<a href="#" onclick="stu_art()"><i class="fa fa-fw fa-file-o" ></i>学生成绩</a>
 			</li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-plus"></i> 班级管理 <span class="caret"></span></a>
 			  <ul class="dropdown-menu" role="menu">
 					<li class="dropdown-header"></li>
-					<li><a href="#" onclick="all_student()">学生名单</a></li>
-					<li><a href="http://127.0.0.1:8000/art" onclick="stu_art()">学生作品</a></li>
+					<!-- <li><a href="#" onclick="all_student()">学生名单</a></li> -->
+					<li><a href="http://176.221.13.63:8000/art" onclick="stu_art()">学生作品</a></li>
 					<li><a href="#" onclick="add_student_html()">添加学生</a></li>
-					<li><a href="#">打印</a></li>
+					<li><a href="#" onclick="all_student()">打印</a></li>
 			  </ul>
 			</li>
 			<li>
 				<a href="#"><i class="fa fa-fw fa-twitter"></i>直播管理</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-dropbox"></i>课程安排</a>
+				<a href="#"onclick="load_calendar()"><i class="fa fa-fw fa-dropbox"></i>课程安排</a>
 			</li>
 			<li>
-				<a href="#"><i class="fa fa-fw fa-cog"></i>设置</a>
+				<a href="#" onclick="tec_setting_html()" ><i class="fa fa-fw fa-cog"></i>设置</a>
 			</li>
 		</ul>
 	<!-- 内容 -->
@@ -128,14 +127,20 @@
 <script src="/static/js/swiper.min.js"></script>
 <script src="/static/js/head.js"></script>
 <script>
+	load_index()
+	show_classs()
+	stu_artt()
+
+	$(function(){
+		
+	})
 	$(document).ready(function () {
 		var username = window.localStorage.getItem('manager_user')
 				// console.log(username)
-        $('#user_name').text('欢迎'+ username+'老师')
+        // $('#user_name').text('欢迎'+ username+'老师')
 	  var trigger = $('.hamburger'),
 		  overlay = $('.overlay'),
 		 isClosed = false;
-
 		trigger.click(function () {
 		  hamburger_cross();      
 		});
@@ -159,6 +164,96 @@
 	  });  
 	});
 	
+// 加载日历界面
+function load_calendar(){
+    $('#write').load('/calendar#calendar')
+}
+// 首页
+function load_index(){
+    $('#write').load('/interior/index#wrap')
+}
+
+function stu_artt(){
+    var token = window.localStorage.getItem('manager_token')
+    var teacher = window.localStorage.getItem('manager_user')
+    var post_data = { 'teacher': teacher }
+    $.ajax({
+        url: 'http://176.221.13.63:8000/interior/student',
+        type: 'post',
+        data: JSON.stringify(post_data),
+        dataType: 'json',
+        beforeSend: function (request) {
+            request.setRequestHeader("Authorization", token);
+        },
+        success: function (result) {
+            if (result.code == 200) {
+                // // 遍历学生列表,获取到单个学生
+                // html = ''
+                // $.each(result.data, function(index, element){
+                //     var stu_name = element.name
+                //     // console.log(stu_name)
+                //     // 遍历单个学生所有作品
+                //     $.each(element.art, function(index_i, element_i){
+                //         html += '<div class="c_img">'
+                //         html += '<img class="stu_img" src="http://176.221.13.63:8000/media/'
+                //         html += element_i.img
+                //         html += '">'
+                //         html += '<span class="t">'
+                //         html += stu_name  
+                //         html += '&nbsp;|&nbsp;'
+                //         html += element_i.score
+                //         html += '</span>'
+                //         html += '</div>'
+                        // console.log(html)
+                    // })
+                // })
+                // $('#write').html(html)
+                window.localStorage.setItem('all_stu_art', JSON.stringify(result.data))
+            }
+
+        }
+    })
+}
+
+function show_classs(){
+    var token = window.localStorage.getItem('manager_token');
+    //登陆的用户名
+    var username = window.localStorage.getItem('manager_user')
+    var post_data = { 'username': username.toString() }
+    $.ajax({
+        url: 'http://176.221.13.63:8000/interior/all_student',
+        type: 'post',
+        data: JSON.stringify(post_data),
+        dataType: 'json',
+        beforeSend: function (request) {
+            request.setRequestHeader("Authorization", token);
+        },
+        success: function (result) {
+            if (result.code == 200) {
+                window.localStorage.setItem('all_class', JSON.stringify(result.data))
+                // console.log(result)
+                // class_html = ''
+                // // 班级
+                // $.each(result.class_list, function (index, element) {
+                //     // <li><a href="#" title="table_d">一班  </a></li>
+                //     class_html += '<li><a title="table_d" onclick="stu_class(this.id)" id="'
+                //     class_html += element
+                //     class_html += '">'
+                //     class_html += element 
+                //     class_html += '</a></li>'
+                // })
+                // $('#tabs').html(class_html)
+                
+            }
+            else {
+                alert(data.error)
+            }
+        }
+    })
+  }
+
+
+
 </script>
 
 

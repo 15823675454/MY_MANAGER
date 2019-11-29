@@ -170,7 +170,7 @@
             // dataType
             dataType: "json",
             // url
-            url: "http://127.0.0.1:8000/user/login/jbxq",
+            url: "http://176.221.13.63:8000/user/login/jbxq",
             data: JSON.stringify(post_data),
             // result 为请求的返回结果对象
             success: function (result) {
@@ -181,8 +181,6 @@
                     refer_url = document.referrer
                    
                     window.location = '/interior/teacher/'+result.username;
-                    
-
                 } else {
                     alert(result.error)
                 }

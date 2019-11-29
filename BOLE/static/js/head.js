@@ -1,8 +1,9 @@
 $(function(){
   $.ajax({
-    url:"http://127.0.0.1:8000/head.html",
+    url:"http://176.221.13.63:8000/head.html",
     type:"get",
     success:function(html){
+      // console.log('hhhhhhhhhhhhhhhhhhhhhh')
       $(html).replaceAll("#header")
     }
   })
